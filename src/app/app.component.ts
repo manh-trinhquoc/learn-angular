@@ -17,4 +17,5 @@ export class AppComponent {
     planet: 'Earth',
     color: 'cyan'
   };
+
 }
