@@ -6,13 +6,19 @@ import { HeroComponent } from './hero/hero.component';
 import { HeroesComponent } from './heroes/heroes.component';
 
 import { SortPipe } from './pipes/sort.pipe';
+import { CopyrightDirective } from './directives/copyright.directive';
+import { NumericDirective } from './directives/numeric.directive';
+import { PermissionDirective } from './directives/permission.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroComponent,
     HeroesComponent,
-    SortPipe
+    SortPipe,
+    CopyrightDirective,
+    NumericDirective,
+    PermissionDirective
   ],
   imports: [
     BrowserModule
