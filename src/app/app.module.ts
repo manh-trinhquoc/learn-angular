@@ -10,6 +10,8 @@ import { CopyrightDirective } from './directives/copyright.directive';
 import { NumericDirective } from './directives/numeric.directive';
 import { PermissionDirective } from './directives/permission.directive';
 
+import { HeroesModule } from './modules/heroes/heroes.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { PermissionDirective } from './directives/permission.directive';
     PermissionDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HeroesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
