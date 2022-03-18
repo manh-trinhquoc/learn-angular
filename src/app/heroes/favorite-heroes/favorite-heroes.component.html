@@ -1,0 +1,8 @@
+<p>favorite-heroes works!</p>
+<pre> {{ heroes | json }} </pre>
+<ul>
+  <li *ngFor="let hero of heroes | slice:0:3">
+    {{ hero.name }}
+  </li>
+
+</ul>
