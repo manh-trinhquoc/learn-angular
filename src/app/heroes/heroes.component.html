@@ -1,0 +1,49 @@
+<p>heroes works!</p>
+
+<p>no sort</p>
+<pre>
+  {{ heroes | json }}
+</pre>
+<ul>
+  <li *ngFor="let hero of heroes ">
+    {{hero.name}}
+  </li>
+</ul>
+
+
+
+
+
+<p>sort name</p>
+<pre>
+  {{ heroes | sort:'name' | json }}
+</pre>
+<ul>
+  <li *ngFor="let hero of heroes | sort:'name'">
+    {{hero.name}}
+  </li>
+</ul>
+
+<p>sort id</p>
+<pre>
+  {{ heroes | sort:'id' | json }}
+</pre>
+<ul>
+  <li *ngFor="let hero of heroes | sort:'id'">
+    {{hero.name}}
+  </li>
+</ul>
+
+
+
+<p>sort team</p>
+<pre>
+  {{ heroes | sort:'team' | json }}
+</pre>
+<ul>
+  <li *ngFor="let hero of heroes | sort:'team' ; index as   myIndex">
+    {{hero.name}}
+    {{ myIndex }}
+    {{ index }}
+  </li>
+</ul>
