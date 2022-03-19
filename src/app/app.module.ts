@@ -11,6 +11,7 @@ import { NumericDirective } from './directives/numeric.directive';
 import { PermissionDirective } from './directives/permission.directive';
 
 import { HeroesModule } from './modules/heroes/heroes.module';
+import { KeyLoggerComponent } from './components/key-logger/key-logger.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeroesModule } from './modules/heroes/heroes.module';
     SortPipe,
     CopyrightDirective,
     NumericDirective,
-    PermissionDirective
+    PermissionDirective,
+    KeyLoggerComponent
   ],
   imports: [
     BrowserModule,
