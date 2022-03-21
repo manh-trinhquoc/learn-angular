@@ -1,4 +1,4 @@
-import { HerosFavoriteService } from './favorite-heroes2/heros-favorite.service';
+import { HerosFavoriteService } from './favorite-heroes/heros-favorite.service';
 import { HeroService } from './hero.service';
 
 export function heroSquadFactory(isFavorite: boolean) {
