@@ -13,6 +13,9 @@ import { PermissionDirective } from './directives/permission.directive';
 import { HeroesModule } from './modules/heroes/heroes.module';
 import { KeyLoggerComponent } from './components/key-logger/key-logger.component';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from './services/data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,9 @@ import { KeyLoggerComponent } from './components/key-logger/key-logger.component
   ],
   imports: [
     BrowserModule,
-    HeroesModule
+    HeroesModule,
+    HttpClientInMemoryWebApiModule.forRoot(DataService)
+    // environment.production ? HttpClientInMemoryWebApiModule.forRoot(DataService) : []
   ],
   providers: [],
   bootstrap: [AppComponent]

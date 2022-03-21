@@ -24,9 +24,9 @@ export class KeyLoggerComponent implements OnInit {
       map((evt: KeyboardEvent) => evt.key.charCodeAt(0)),
       filter(code => {
         console.log(this);
-        if (this.numeric) {
-          return !(code > 31 && (code < 48 || code > 57));
-        }
+        // if (this.numeric) {
+        //   return !(code > 31 && (code < 48 || code > 57));
+        // }
         return true;
       }),
       tap(digit => this.keys += String.fromCharCode(digit))
