@@ -9,9 +9,9 @@ export class HerosFavoriteService extends HeroService {
 
   constructor() {
     super();
-   }
+  }
 
    getHeroes(): Hero[] {
-       return super.getHeroes().slice(0, 3);
+      return super.getHeroes().slice(0, 3);
    }
 }
