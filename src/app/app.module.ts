@@ -18,7 +18,6 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './services/data.service';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,8 +33,10 @@ import { DataService } from './services/data.service';
     BrowserModule,
     HeroesModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(DataService)
-    // environment.production ? HttpClientInMemoryWebApiModule.forRoot(DataService) : []
+    HttpClientInMemoryWebApiModule.forRoot(DataService, {
+      delay: 2000,
+    }),
+    // (environment.production ? HttpClientInMemoryWebApiModule.forRoot(DataService) : [])
   ],
   providers: [],
   bootstrap: [AppComponent]

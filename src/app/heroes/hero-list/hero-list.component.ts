@@ -5,10 +5,6 @@ import { HeroService } from '../hero.service';
   selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
   styleUrls: ['./hero-list.component.css'],
-  providers: [{
-    provide: HeroService,
-    useClass: HeroService
-  }],
   viewProviders: [HeroService]
 })
 export class HeroListComponent implements OnInit {
@@ -19,7 +15,12 @@ export class HeroListComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.heroes = this.heroService.getHeroes();
+    // this.heroes = this.heroService.getHeroes();
+    this.getHeroes();
+  }
+
+  private getHeroes(){
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
 }
