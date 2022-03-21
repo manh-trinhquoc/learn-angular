@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { Hero } from '../model/hero.model';
+import { Hero } from '../heroes/hero.model';
 
 
 @Pipe({

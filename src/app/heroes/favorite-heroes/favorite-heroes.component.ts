@@ -3,7 +3,7 @@ import { HeroService } from 'src/services/heroes/hero.service';
 import { HerosFavoriteService } from './heros-favorite.service';
 import { heroSquadFactory } from '../hero-squad'
 
-import { Hero } from '../../model/hero.model';
+import { Hero } from '../hero.model';
 
 @Component({
   selector: 'app-favorite-heroes',

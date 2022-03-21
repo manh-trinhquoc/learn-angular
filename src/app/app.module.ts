@@ -10,11 +10,15 @@ import { CopyrightDirective } from './directives/copyright.directive';
 import { NumericDirective } from './directives/numeric.directive';
 import { PermissionDirective } from './directives/permission.directive';
 
-import { HeroesModule } from './modules/heroes/heroes.module';
+import { HeroesModule } from './heroes/heroes.module';
 import { KeyLoggerComponent } from './components/key-logger/key-logger.component';
 
+import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './services/data.service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -30,6 +34,7 @@ import { DataService } from './services/data.service';
   imports: [
     BrowserModule,
     HeroesModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService)
     // environment.production ? HttpClientInMemoryWebApiModule.forRoot(DataService) : []
   ],
