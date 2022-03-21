@@ -44,7 +44,7 @@ export class AppComponent {
       //   resolve();
       // }, 2000);
       setInterval(() => {
-        resolve();
+        resolve(null);
       }, 2000);
     });
   }

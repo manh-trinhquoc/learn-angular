@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HeroService } from 'src/services/heroes/hero.service';
+import { HeroService } from '../hero.service';
 import { Hero } from '../hero.model';
 
 @Injectable()
