@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Hero } from './hero.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +21,9 @@ export class HeroService {
   // }
 
   getHeroes (): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.heroesUrl);
+    return this.http.get<Hero[]>(this.heroesUrl, {
+      headers: new HttpHeaders({'Authorization': 'myAuthToken'})
+    });
   }
 
   createHero(name: string): Observable<Hero> {
