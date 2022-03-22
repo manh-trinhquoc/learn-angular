@@ -4,6 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 
+import { catchError, retry } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +27,15 @@ export class HeroService {
   getHeroes (): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl, {
       headers: new HttpHeaders({'Authorization': 'myAuthToken'})
-    });
+    }).pipe(
+      retry(2),
+      catchError(
+        (error: HttpErrorResponse) => {
+          console.error(error);
+          return throwError(error);
+        }
+      )
+    );
   }
 
   createHero(name: string): Observable<Hero> {

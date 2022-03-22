@@ -3,6 +3,8 @@ import { HeroService } from '../hero.service';
 
 import { Hero } from '../hero.model';
 
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
@@ -11,18 +13,24 @@ import { Hero } from '../hero.model';
 })
 export class HeroListComponent implements OnInit {
 
+  private heroSub: Subscription;
+
   heroes: Hero[];
 
   constructor(private heroService: HeroService) {   }
 
   ngOnInit(): void {
-    
     // this.heroes = this.heroService.getHeroes();
     this.getHeroes();
   }
 
+  ngOnDestroy() {
+    this.heroSub.unsubscribe();
+  }
+  
   private getHeroes(){
-    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    // this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    this.heroSub = this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
   add(name: string) {
