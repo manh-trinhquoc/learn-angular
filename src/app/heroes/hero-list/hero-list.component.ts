@@ -5,6 +5,14 @@ import { Hero } from '../hero.model';
 
 import { Subscription } from 'rxjs';
 
+import { Subject } from 'rxjs';
+
+import { takeUntil } from 'rxjs/operators';
+
+import { map } from 'rxjs/operators';
+
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
@@ -13,7 +21,11 @@ import { Subscription } from 'rxjs';
 })
 export class HeroListComponent implements OnInit {
 
-  private heroSub: Subscription;
+  heroes$: Observable<Hero[]>;
+
+  // private heroSub: Subscription;
+
+  private heroSub = new Subject();
 
   heroes: Hero[];
 
@@ -25,12 +37,19 @@ export class HeroListComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.heroSub.unsubscribe();
+    // this.heroSub.unsubscribe();
+    this.heroSub.next();
+    this.heroSub.complete();
   }
   
   private getHeroes(){
     // this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-    this.heroSub = this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    // this.heroSub = this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+    // this.heroService.getHeroes().pipe(      
+    //   map(heroes => this.heroes = heroes),
+    //   takeUntil(this.heroSub)
+    // ).subscribe();
+    this.heroes$ = this.heroService.getHeroes();
   }
 
   add(name: string) {

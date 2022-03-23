@@ -1,7 +1,7 @@
 <p>hero-list works! 22</p>
 <pre> {{ heroes | json }} </pre>
 <ul>
-  <li *ngFor="let hero of heroes">
+  <li *ngFor="let hero of heroes$ | async">
     <p>I am hero {{hero.name}} (id: {{hero.id}})</p>
   </li>
 
