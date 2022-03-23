@@ -14,3 +14,9 @@
 .invalid {
   border-bottom: solid gold;
 }
+
+
+[routerLink] {
+  display: inline-block;
+  padding: 10px;
+}

@@ -45,15 +45,16 @@ export class HeroListComponent implements OnInit {
   private getHeroes(){
     // this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
     // this.heroSub = this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
-    // this.heroService.getHeroes().pipe(      
-    //   map(heroes => this.heroes = heroes),
-    //   takeUntil(this.heroSub)
-    // ).subscribe();
+    this.heroService.getHeroes().pipe(      
+      map(heroes => this.heroes = heroes),
+      takeUntil(this.heroSub)
+    ).subscribe();
     this.heroes$ = this.heroService.getHeroes();
   }
 
   add(name: string) {
     this.heroService.createHero(name).subscribe(hero =>     this.heroes.push(hero));
+    // this.heroService.createHero(name).subscribe(hero =>     console.log(hero));
   }
 
   rename(hero: Hero) {

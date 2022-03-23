@@ -20,6 +20,8 @@ import { DataService } from './services/data.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -40,10 +42,14 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
       delay: 2000,
     }),
     // (environment.production ? HttpClientInMemoryWebApiModule.forRoot(DataService) : [])
+    // RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:     AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+

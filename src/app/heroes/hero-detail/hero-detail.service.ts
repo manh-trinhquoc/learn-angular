@@ -12,8 +12,13 @@ export class HeroDetailService {
   getHero(id: number) {
     let heroes = this.heroService.getHeroes();
     if (!this.hero) {
-      this.hero = heroes.find(hero => hero.id === id);
+      // this.hero = heroes.find(hero => hero.id === id);
+      heroes.subscribe(heroList => {
+        console.log(heroList);
+        heroList.find(hero => hero.id === id);
+      });
     }
+
     return this.hero;
   }
 }
