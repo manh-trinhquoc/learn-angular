@@ -38,6 +38,10 @@ export class HeroService {
     );
   }
 
+  getHero(id: number): Observable<Hero> {
+    return this.http.get<Hero>(this.heroesUrl + id);
+  }
+
   createHero(name: string): Observable<Hero> {
     const hero = { name };
     return this.http.post<Hero>(this.heroesUrl, hero);

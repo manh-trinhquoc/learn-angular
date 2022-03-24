@@ -1,9 +1,11 @@
 <p>hero-list works! 22</p>
-<pre> {{ heroes | json }} </pre>
 <pre> {{ heroes$ | async | json }} </pre>
+<pre> {{ heroes | json }} </pre>
 <ul>
-  <li *ngFor="let hero of heroes$ | async">
+  <li *ngFor="let hero of heroes">
     <p>I am hero {{hero.name}} (id: {{hero.id}})</p>
+    <a [routerLink]="['/hero', hero.id]">{{hero.name}}</a>
+    <p> Child route <a [routerLink]="['./', hero.id]">{{hero.name}}</a></p>
   </li>
 
 </ul>
@@ -19,3 +21,6 @@
 <div>
   <button (click)="remove(heroes[4])">Delete Piranhaelli</button>
 </div>
+
+<h2>Detail hero information</h2>
+<router-outlet></router-outlet>
