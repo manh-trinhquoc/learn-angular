@@ -21,6 +21,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AppRoutingModule } from './app-routing.module';
     CopyrightDirective,
     NumericDirective,
     PermissionDirective,
-    KeyLoggerComponent
+    KeyLoggerComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

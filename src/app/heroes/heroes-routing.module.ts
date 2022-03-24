@@ -6,7 +6,9 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroListComponent },
-  { path: 'hero', component: HeroDetailComponent }
+  { path: 'hero', component: HeroDetailComponent },
+  // { path: '', component: HeroListComponent }
+  { path: '', redirectTo: '/heroes', pathMatch: 'full' }
 ];
 
 @NgModule({
