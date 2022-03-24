@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 
+import { AuthGuard } from '../auth.guard';
+
 const routes: Routes = [
   { 
     path: 'heroes', 
@@ -12,8 +14,10 @@ const routes: Routes = [
       { path: ':id', component: HeroDetailComponent },
     ] 
   },
-  { path: 'hero/:id', component: HeroDetailComponent },
-  { path: 'hero', component: HeroDetailComponent },
+  { path: 'hero/:id', component: HeroDetailComponent,  canActivate: [AuthGuard] },
+  { path: 'hero', 
+    component: HeroDetailComponent   
+  },
   // { path: '', component: HeroListComponent }
   { path: '', redirectTo: '/heroes', pathMatch: 'full' }
 ];

@@ -27,9 +27,7 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
     this.hero = this.heroDetaiService.getHero(this.id);
     this.getHeroObs();
-    this.route.queryParamMap.subscribe(params => {
-      console.log(params.get('sortOrder'));
-    });
+    
   }
 
   private getHeroObs() {
