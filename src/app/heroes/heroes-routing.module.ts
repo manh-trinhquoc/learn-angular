@@ -7,6 +7,8 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 import { AuthGuard } from '../guards/auth.guard';
 import { ConfirmGuard } from '../guards/confirm.guard';
 
+import { HeroDetailResolverService } from '../services/hero-detail-resolver.service'
+
 const routes: Routes = [
   { 
     path: 'heroes', 
@@ -18,7 +20,10 @@ const routes: Routes = [
   { path: 'hero/:id',
     component: HeroDetailComponent,
     canActivate: [AuthGuard],
-    canDeactivate: [ConfirmGuard]
+    canDeactivate: [ConfirmGuard],
+    resolve: {
+      hero: HeroDetailResolverService
+    }
   },
   { path: 'hero', 
     component: HeroDetailComponent   
