@@ -12,6 +12,7 @@ import { takeUntil } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
 
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-hero-list',
@@ -29,11 +30,14 @@ export class HeroListComponent implements OnInit {
 
   heroes: Hero[];
 
-  constructor(private heroService: HeroService) {   }
+  constructor(private heroService: HeroService, private route:ActivatedRoute) {   }
 
   ngOnInit(): void {
     // this.heroes = this.heroService.getHeroes();
     this.getHeroes();
+    this.route.queryParamMap.subscribe(params => {
+      console.log(params.get('sortOrder'));
+    });
   }
 
   ngOnDestroy() {
