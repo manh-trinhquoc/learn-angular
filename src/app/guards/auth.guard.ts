@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanLoad, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
+import  { Route } from '@angular/router';
+import { UrlSegment } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AuthGuard implements CanActivate, CanLoad {
 
   private isAuthenticated = true;
 
@@ -16,6 +18,12 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     // return true;
+    return this.checkLogin();
+  }
+
+  canLoad(
+    route: Route,
+    segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
     return this.checkLogin();
   }
   
