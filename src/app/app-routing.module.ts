@@ -5,6 +5,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 
 const routes: Routes = [
+  { path: 'about', loadChildren: () => import('../app/modules/about/about.module').then(m => m.AboutModule)},
   { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
