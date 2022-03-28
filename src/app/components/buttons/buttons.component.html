@@ -45,3 +45,42 @@
   </mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </div>
+
+<div>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu>
+    <button mat-menu-item>Option A</button>
+    <button mat-menu-item [matMenuTriggerFor]="submenu">Option B</button>
+  </mat-menu>
+  <p>test</p>
+  <mat-menu #submenu>
+    <button mat-menu-item>Option B1</button>
+    <button mat-menu-item>Option B2</button>
+  </mat-menu>
+</div>
+
+<div>
+  <mat-list>
+    <mat-list-item *ngFor="let hero of heroes">
+      {{hero.name}}
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<div>
+  <mat-selection-list>
+    <mat-list-option *ngFor="let hero of heroes">
+      {{hero.name}}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+
+<div>
+  <mat-grid-list cols="3" rowHeight="100px" gutterSize="50">
+    <mat-grid-tile *ngFor="let hero of heroes">
+      {{hero.name}}
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
