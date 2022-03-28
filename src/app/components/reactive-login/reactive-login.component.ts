@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -26,8 +27,17 @@ export class ReactiveLoginComponent implements OnInit {
 
   constructor(private builder: FormBuilder ) {   }
 
+  passwordChangeSubcription: Subscription;
   ngOnInit(): void {
+
+    this.passwordChangeSubcription = this.password.valueChanges.subscribe((value: string) => {
+        this.showPasswordHint = value.length < 6;
+    });
   }
+
+  ngOnDestroy() {
+    this.passwordChangeSubcription.unsubscribe()
+}
 
   login(){
     const controls = this.loginForm.controls;
@@ -45,5 +55,7 @@ export class ReactiveLoginComponent implements OnInit {
       ]]
     });
   }
+
+  showPasswordHint: boolean;
 
 }
