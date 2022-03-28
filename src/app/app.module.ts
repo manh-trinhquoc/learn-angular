@@ -23,6 +23,9 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     NumericDirective,
     PermissionDirective,
     KeyLoggerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     }),
     // (environment.production ? HttpClientInMemoryWebApiModule.forRoot(DataService) : [])
     // RouterModule.forRoot(routes)
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:     AuthInterceptor, multi: true }

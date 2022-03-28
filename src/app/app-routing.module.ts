@@ -22,7 +22,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     // preloadingStrategy: PreloadAllModules
     preloadingStrategy:       CustomPreloadingService,
-    enableTracing: true
+    // enableTracing: true
   })],
   exports: [RouterModule]
 })
