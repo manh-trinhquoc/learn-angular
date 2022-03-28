@@ -26,6 +26,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveLoginComponent } from './components/reactive-login/reactive-login.component';
+import { ReservedNameDirective } from './directives/reserved-name.directive';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ReactiveLoginComponent } from './components/reactive-login/reactive-log
     KeyLoggerComponent,
     PageNotFoundComponent,
     LoginComponent,
-    ReactiveLoginComponent
+    ReactiveLoginComponent,
+    ReservedNameDirective
   ],
   imports: [
     BrowserModule,

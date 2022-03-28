@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms';
+
+import { reservedNameValidator } from 'src/app/directives/reserved-name.directive';
 
 @Component({
   selector: 'app-reactive-login',
@@ -32,13 +34,25 @@ export class ReactiveLoginComponent implements OnInit {
     ])
   });
 
-  constructor() { }
+  constructor(private builder: FormBuilder ) { 
+
+  }
+
+  private buildForm() {
+    this.loginForm = this.builder.group({
+      username: ['', Validators.required],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(6)
+      ]]
+    });
+  }
 
   ngOnInit(): void {
   }
 
   heroDetails = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('', reservedNameValidator()),
     realName: new FormControl(''),
     biometricData: new FormGroup({
       age: new FormControl(''),
