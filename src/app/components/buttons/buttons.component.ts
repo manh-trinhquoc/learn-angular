@@ -29,4 +29,6 @@ export class ButtonsComponent implements OnInit {
 
   filteredHeroes$: Observable<Hero[]>;
 
+  isChecked: boolean;
+
 }

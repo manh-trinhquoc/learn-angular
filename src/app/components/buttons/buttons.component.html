@@ -34,3 +34,14 @@
     <mat-option *ngFor="let hero of filteredHeroes$ | async" [value]="hero.name">{{hero.name}}</mat-option>
   </mat-autocomplete>
 </div>
+<div>
+  <mat-checkbox [checked]="isChecked">Check me</mat-checkbox>
+</div>
+<div>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Select a date" [matDatepicker]="picker">
+  </mat-form-field>
+  <mat-datepicker-toggle matSuffix [for]="picker">
+  </mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</div>
