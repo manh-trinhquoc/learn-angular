@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
+
+import { heroes } from '../../heroes';
+import { Hero } from '../../heroes/hero.model';
+
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-buttons',
   templateUrl: './buttons.component.html',
@@ -10,6 +19,14 @@ export class ButtonsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.filteredHeroes$ = this.name.valueChanges.pipe(map(name => this.heroes.filter(hero => hero.name.startsWith(name)))
+    );
   }
+
+  name = new FormControl('', Validators.required);
+
+  heroes = heroes;
+
+  filteredHeroes$: Observable<Hero[]>;
 
 }

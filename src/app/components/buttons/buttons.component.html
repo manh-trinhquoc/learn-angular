@@ -18,3 +18,17 @@
     <mat-icon>format_align_right</mat-icon>
   </mat-button-toggle>
 </mat-button-toggle-group>
+<div>
+  <h3>mat form field</h3>
+  <mat-form-field>
+    <input type="text" [formControl]="name" placeholder="Name" matInput>
+    <mat-error *ngIf="!name.valid">Name is required</mat-error>
+  </mat-form-field>
+</div>
+<div>
+  <h3>mat autocomplete</h3>
+  <input matInput type="text" [formControl]="name" placeholder="Name" [matAutocomplete]="heroesAuto">
+  <mat-autocomplete #heroesAuto="matAutocomplete">
+    <mat-option *ngFor="let hero of filteredHeroes$ | async" [value]="hero.name">{{hero.name}}</mat-option>
+  </mat-autocomplete>
+</div>
