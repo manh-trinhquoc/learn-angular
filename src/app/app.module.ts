@@ -42,6 +42,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './components/dialog/dialog.component';
  
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     LoginComponent,
     ReactiveLoginComponent,
     ReservedNameDirective,
-    ButtonsComponent
+    ButtonsComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +86,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatNativeDateModule,
     MatMenuModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:     AuthInterceptor, multi: true }

@@ -9,6 +9,7 @@ import { Hero } from '../../heroes/hero.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-buttons',
   templateUrl: './buttons.component.html',
@@ -30,5 +31,7 @@ export class ButtonsComponent implements OnInit {
   filteredHeroes$: Observable<Hero[]>;
 
   isChecked: boolean;
+
+  
 
 }

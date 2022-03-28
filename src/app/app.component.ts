@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from './components/dialog/dialog.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,7 +35,7 @@ export class AppComponent {
     }, 2000);
   }
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     // this.changeTitle(this.setTitle);
     this.onComplete().then(this.setTitle);
     this.title$.subscribe(this.setTitle);
@@ -54,5 +57,13 @@ export class AppComponent {
       observer.next();
     }, 2000);
   });
+
+
+  showDialog() {
+    this.dialog.open(DialogComponent, {
+      autoFocus: false,
+      data: 'My dialog'
+    });
+  }
 
 }
