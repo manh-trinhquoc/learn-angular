@@ -27,6 +27,7 @@ import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveLoginComponent } from './components/reactive-login/reactive-login.component';
 import { ReservedNameDirective } from './directives/reserved-name.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { ReservedNameDirective } from './directives/reserved-name.directive';
     // RouterModule.forRoot(routes)
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:     AuthInterceptor, multi: true }
