@@ -1,5 +1,5 @@
+<h3>Reactive forms</h3>
 <p>reactive-login works!</p>
-<p>login works!</p>
 <form (ngSubmit)="login()" [formGroup]="loginForm">
   <div>
     <input type="text" name="username" placeholder="Username" formControlName="username" required>
@@ -14,42 +14,4 @@
 </form>
 
 <div>You are trying to login as <b>{{loginForm.controls.username.value}}</b></div>
-<div>
-  <h2>
-    Hero form
-  </h2>
-
-  <form [formGroup]="heroDetails">
-    <div>
-      <label>Name</label>
-      <input type="text" formControlName="name">
-      <span class="help-block" *ngIf="heroDetails.controls.name.hasError('reservedName')">Hero name is already taken</span>
-    </div>
-    <div>
-      <label for="">RealName</label>
-      <input type="text" formControlName="realName">
-    </div>
-
-    <form formGroupName="biometricData">
-      <div>
-        <label>Age:</label>
-        <input type="number" formControlName="age">
-      </div>
-      <div>
-        <label>Eyes:</label>
-        <input type="color" formControlName="eyes">
-      </div>
-      <div>
-        <label>Hair:</label>
-        <input type="color" formControlName="hair">
-      </div>
-    </form>
-  </form>
-  <button (click)="addPower()">Add power</button>
-  <div *ngFor="let power of powers.controls; let i=index">
-    <label>
-      Power:
-      <input type="text" [formControlName]="i">
-    </label>
-  </div>
-</div>
+<h3>end of Reactive forms</h3>

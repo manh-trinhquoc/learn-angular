@@ -1,4 +1,52 @@
+<h3> hero component </h3>
 <p *ngIf="name === 'Boothstomper'; else noHero">{{name}} hero works!</p>
 <ng-template #noHero>
   <p>Hero was not found</p>
 </ng-template>
+
+<button (click)="addHero()">Add hero</button>
+<button (click)="addBio()">Add biometric</button>
+<div>
+  <h2>
+    Hero form
+  </h2>
+
+  <form [formGroup]="heroDetails">
+    <div>
+      <label>Name</label>
+      <input type="text" formControlName="name">
+      <span class="help-block" *ngIf="heroDetails.controls.name.hasError('reservedName')">Hero name is already taken</span>
+    </div>
+    <div>
+      <label for="">RealName</label>
+      <input type="text" formControlName="realName">
+    </div>
+    <h4>Biometric data</h4>
+    <form formGroupName="biometricData">
+      <div>
+        <label>Age:</label>
+        <input type="number" formControlName="age">
+      </div>
+      <div>
+        <label>Eyes:</label>
+        <input type="color" formControlName="eyes">
+      </div>
+      <div>
+        <label>Hair:</label>
+        <input type="color" formControlName="hair">
+      </div>
+    </form>
+  </form>
+  <button (click)="addPower()">Add power</button>
+  <div formArrayName="powers" *ngFor="let power of powers.controls; let i=index">
+    <label>
+      Power:
+      <input type="text" [formControlName]="i">
+    </label>
+  </div>
+
+
+
+</div>
+
+<h3>end of hero compoenent</h3>
