@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-login',
@@ -43,7 +44,16 @@ export class ReactiveLoginComponent implements OnInit {
       age: new FormControl(''),
       eyes: new FormControl(''),
       hair: new FormControl('')
-    })
+    }),
+    powers: new FormArray([])
   })
+
+  get powers(): FormArray {
+    return this.heroDetails.controls.powers as FormArray;
+  }
+
+  addPower() {
+    this.powers.push(new FormControl(''));
+  }
 
 }

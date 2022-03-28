@@ -14,29 +14,41 @@
 </form>
 
 <div>You are trying to login as <b>{{loginForm.controls.username.value}}</b></div>
+<div>
+  <h2>
+    Hero form
+  </h2>
 
-<form [formGroup]="heroDetails">
-  <div>
-    <label>Name</label>
-    <input type="text" formControlName="name">
-  </div>
-  <div>
-    <label for="">RealName</label>
-    <input type="text" formControlName="realName">
-  </div>
+  <form [formGroup]="heroDetails">
+    <div>
+      <label>Name</label>
+      <input type="text" formControlName="name">
+    </div>
+    <div>
+      <label for="">RealName</label>
+      <input type="text" formControlName="realName">
+    </div>
 
-  <form formGroupName="biometricData">
-    <div>
-      <label>Age:</label>
-      <input type="number" formControlName="age">
-    </div>
-    <div>
-      <label>Eyes:</label>
-      <input type="color" formControlName="eyes">
-    </div>
-    <div>
-      <label>Hair:</label>
-      <input type="color" formControlName="hair">
-    </div>
+    <form formGroupName="biometricData">
+      <div>
+        <label>Age:</label>
+        <input type="number" formControlName="age">
+      </div>
+      <div>
+        <label>Eyes:</label>
+        <input type="color" formControlName="eyes">
+      </div>
+      <div>
+        <label>Hair:</label>
+        <input type="color" formControlName="hair">
+      </div>
+    </form>
   </form>
-</form>
+  <button (click)="addPower()">Add power</button>
+  <div *ngFor="let power of powers.controls; let i=index">
+    <label>
+      Power:
+      <input type="text" [formControlName]="i">
+    </label>
+  </div>
+</div>
