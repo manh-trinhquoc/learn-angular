@@ -27,8 +27,12 @@ import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveLoginComponent } from './components/reactive-login/reactive-login.component';
 import { ReservedNameDirective } from './directives/reserved-name.directive';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { ButtonsComponent } from './components/buttons/buttons.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PageNotFoundComponent,
     LoginComponent,
     ReactiveLoginComponent,
-    ReservedNameDirective
+    ReservedNameDirective,
+    ButtonsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatButtonToggleModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:     AuthInterceptor, multi: true }
