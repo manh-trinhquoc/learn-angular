@@ -63,6 +63,8 @@ export class AppComponent {
     this.dialog.open(DialogComponent, {
       autoFocus: false,
       data: 'My dialog'
+    }).afterClosed().subscribe(result => {
+      if (result) { window.alert(result); }
     });
   }
 
