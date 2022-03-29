@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { trigger } from '@angular/animations';
+import { AnimationFactory, AnimationPlayer, trigger } from '@angular/animations';
 import { state } from '@angular/animations';
 import { transition } from '@angular/animations';
 import { style } from '@angular/animations';
 import { animate } from '@angular/animations';
+
+import { AnimationBuilder } from '@angular/animations';
+import { ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-animations',
@@ -32,9 +35,24 @@ export class AnimationsComponent implements OnInit {
 
   state: string;
 
-  constructor() { }
+  constructor(private builder: AnimationBuilder, private el: ElementRef) { }
 
   ngOnInit(): void {
+    const factory: AnimationFactory = this.builder.build([
+      style({ width : '0px' }),
+      animate(2000, style({ width: '500px' }))
+    ]);
+
+    const textEl = this.el.nativeElement.querySelector('.text');
+    const player: AnimationPlayer = factory.create(textEl);
+    player.play();
+  }
+
+  started(evt: AnimationEvent) {
+    console.log('Animation started');
+  }
+  finished(evt: AnimationEvent) {
+    console.log('Animation finished');
   }
 
 }
