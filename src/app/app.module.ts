@@ -50,6 +50,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { CopyTextComponent } from './components/copy-text/copy-text.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { DragDropModule } from '@angular/cdk/drag-drop';
  
 @NgModule({
   declarations: [
@@ -99,7 +100,8 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    ClipboardModule
+    ClipboardModule,
+    DragDropModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:     AuthInterceptor, multi: true }

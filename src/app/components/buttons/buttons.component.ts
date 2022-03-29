@@ -9,6 +9,9 @@ import { Hero } from '../../heroes/hero.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { moveItemInArray } from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-buttons',
@@ -32,6 +35,8 @@ export class ButtonsComponent implements OnInit {
 
   isChecked: boolean;
 
-  
+  reorder(event: CdkDragDrop<Hero[]>) {
+    moveItemInArray(this.heroes, event.previousIndex, event.currentIndex);
+  }
 
 }
