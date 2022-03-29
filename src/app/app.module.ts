@@ -51,6 +51,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { CopyTextComponent } from './components/copy-text/copy-text.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FlexLayoutModule} from '@angular/flex-layout';
+import { FlexComponent } from './components/flex/flex.component'
  
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ButtonsComponent,
     DialogComponent,
     TableComponent,
-    CopyTextComponent
+    CopyTextComponent,
+    FlexComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +104,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatSortModule,
     MatPaginatorModule,
     ClipboardModule,
-    DragDropModule
+    DragDropModule,
+    FlexLayoutModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:     AuthInterceptor, multi: true }
