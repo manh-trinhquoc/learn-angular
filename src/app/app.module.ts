@@ -53,7 +53,8 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { FlexComponent } from './components/flex/flex.component';
-import { AnimationsComponent } from './components/animations/animations.component'
+import { AnimationsComponent } from './components/animations/animations.component';
+import { InvisibleComponent } from './components/invisible/invisible.component'
 
  
 @NgModule({
@@ -75,7 +76,8 @@ import { AnimationsComponent } from './components/animations/animations.componen
     TableComponent,
     CopyTextComponent,
     FlexComponent,
-    AnimationsComponent
+    AnimationsComponent,
+    InvisibleComponent
   ],
   imports: [
     BrowserModule,
