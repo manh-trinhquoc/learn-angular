@@ -44,6 +44,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { MatTableModule } from '@angular/material/table';
+import { TableComponent } from './components/table/table.component';
  
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ReactiveLoginComponent,
     ReservedNameDirective,
     ButtonsComponent,
-    DialogComponent
+    DialogComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +90,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MatMenuModule,
     MatListModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:     AuthInterceptor, multi: true }
