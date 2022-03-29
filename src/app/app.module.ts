@@ -47,6 +47,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { MatTableModule } from '@angular/material/table';
 import { TableComponent } from './components/table/table.component';
 import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
  
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatGridListModule,
     MatDialogModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass:     AuthInterceptor, multi: true }
