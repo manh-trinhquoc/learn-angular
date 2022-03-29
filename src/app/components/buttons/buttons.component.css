@@ -2,3 +2,9 @@ mat-list-item {
   cursor: move;
   border: 1px lightgray solid;
 }
+
+
+
+.pulse {
+  animation: pulse 1s infinite;
+}

@@ -84,3 +84,11 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
+
+<div>
+  <h4>heart beat </h4>
+  <button mat-iconbutton [class]="{pulse: isBeating}" color="accent" (click)="isBeating = !isBeating">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <h4>end of heart beat </h4>
+</div>

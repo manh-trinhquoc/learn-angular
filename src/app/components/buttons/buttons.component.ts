@@ -39,4 +39,6 @@ export class ButtonsComponent implements OnInit {
     moveItemInArray(this.heroes, event.previousIndex, event.currentIndex);
   }
 
+  isBeating: boolean = true;
+
 }
