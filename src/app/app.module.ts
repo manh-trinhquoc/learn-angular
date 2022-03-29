@@ -55,7 +55,8 @@ import { FlexLayoutModule} from '@angular/flex-layout';
 import { FlexComponent } from './components/flex/flex.component';
 import { AnimationsComponent } from './components/animations/animations.component';
 import { InvisibleComponent } from './components/invisible/invisible.component';
-import { HighlightDirective } from './directives/highlight.directive'
+import { HighlightDirective } from './directives/highlight.directive';
+import { StubComponent } from './components/stub/stub.component'
 
  
 @NgModule({
@@ -79,7 +80,8 @@ import { HighlightDirective } from './directives/highlight.directive'
     FlexComponent,
     AnimationsComponent,
     InvisibleComponent,
-    HighlightDirective
+    HighlightDirective,
+    StubComponent
   ],
   imports: [
     BrowserModule,
