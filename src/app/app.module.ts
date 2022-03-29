@@ -57,7 +57,8 @@ import { AnimationsComponent } from './components/animations/animations.componen
 import { InvisibleComponent } from './components/invisible/invisible.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { StubComponent } from './components/stub/stub.component';
-import { SpyComponent } from './components/spy/spy.component'
+import { SpyComponent } from './components/spy/spy.component';
+import { AsyncComponent } from './components/async/async.component'
 
  
 @NgModule({
@@ -83,7 +84,8 @@ import { SpyComponent } from './components/spy/spy.component'
     InvisibleComponent,
     HighlightDirective,
     StubComponent,
-    SpyComponent
+    SpyComponent,
+    AsyncComponent
   ],
   imports: [
     BrowserModule,
