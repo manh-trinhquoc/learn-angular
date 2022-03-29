@@ -11,7 +11,9 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-enum StackingIndex {
+
+//temp
+  enum StackingIndex {
   None = 0,
   Dropdown = 1000,
   Overlay = 2000,
@@ -143,4 +145,3 @@ class MockAuthService implements AuthService {
 }
 const srv = new MockAuthService();
 const stuff = new Stuff(srv);
-

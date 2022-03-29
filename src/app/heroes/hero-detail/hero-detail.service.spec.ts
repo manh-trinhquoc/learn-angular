@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+// import { TestBed } from '@angular/core/testing';
 
-import { HeroDetailService } from './hero-detail.service';
+// import { HeroDetailService } from './hero-detail.service';
 
-describe('HeroDetailService', () => {
-  let service: HeroDetailService;
+// describe('HeroDetailService', () => {
+//   let service: HeroDetailService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(HeroDetailService);
-  });
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({});
+//     service = TestBed.inject(HeroDetailService);
+//   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+//   it('should be created', () => {
+//     expect(service).toBeTruthy();
+//   });
+// });
