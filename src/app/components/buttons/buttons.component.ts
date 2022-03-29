@@ -13,10 +13,12 @@ import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { moveItemInArray } from '@angular/cdk/drag-drop';
 
 
+
 @Component({
   selector: 'app-buttons',
   templateUrl: './buttons.component.html',
   styleUrls: ['./buttons.component.css']
+  
 })
 export class ButtonsComponent implements OnInit {
 

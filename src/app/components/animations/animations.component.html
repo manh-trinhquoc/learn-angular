@@ -1,0 +1,11 @@
+<div>
+  <h3>animations component</h3>
+  <button mat-icon-button (click)="state = 'large'">
+    <mat-icon>zoom_in</mat-icon>
+  </button>
+  <button mat-icon-button (click)="state = 'small'">
+    <mat-icon>zoom_out</mat-icon>
+  </button>
+  <p class="animate" [@sizeAnimation]="state">Hello Angular 10</p>
+  <h3> end of animations component </h3>
+</div>

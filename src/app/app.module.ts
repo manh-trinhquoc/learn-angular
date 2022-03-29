@@ -52,7 +52,9 @@ import { CopyTextComponent } from './components/copy-text/copy-text.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FlexLayoutModule} from '@angular/flex-layout';
-import { FlexComponent } from './components/flex/flex.component'
+import { FlexComponent } from './components/flex/flex.component';
+import { AnimationsComponent } from './components/animations/animations.component'
+
  
 @NgModule({
   declarations: [
@@ -72,7 +74,8 @@ import { FlexComponent } from './components/flex/flex.component'
     DialogComponent,
     TableComponent,
     CopyTextComponent,
-    FlexComponent
+    FlexComponent,
+    AnimationsComponent
   ],
   imports: [
     BrowserModule,
