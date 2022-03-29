@@ -4,7 +4,6 @@ import { StubService } from '../../services/stub.service';
 @Component({
   selector: 'app-stub',
   template: "<span>{{msg}}<span>",
-  styleUrls: ['./stub.component.css']
 })
 export class StubComponent implements OnInit {
 
