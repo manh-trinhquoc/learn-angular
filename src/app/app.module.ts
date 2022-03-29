@@ -54,7 +54,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { FlexComponent } from './components/flex/flex.component';
 import { AnimationsComponent } from './components/animations/animations.component';
-import { InvisibleComponent } from './components/invisible/invisible.component'
+import { InvisibleComponent } from './components/invisible/invisible.component';
+import { HighlightDirective } from './directives/highlight.directive'
 
  
 @NgModule({
@@ -77,7 +78,8 @@ import { InvisibleComponent } from './components/invisible/invisible.component'
     CopyTextComponent,
     FlexComponent,
     AnimationsComponent,
-    InvisibleComponent
+    InvisibleComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
