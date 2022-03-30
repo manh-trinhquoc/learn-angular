@@ -23,7 +23,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
-import { FormsModule,  ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { ReactiveLoginComponent } from './components/reactive-login/reactive-login.component';
 import { ReservedNameDirective } from './directives/reserved-name.directive';
@@ -51,7 +51,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { CopyTextComponent } from './components/copy-text/copy-text.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FlexComponent } from './components/flex/flex.component';
 import { AnimationsComponent } from './components/animations/animations.component';
 import { InvisibleComponent } from './components/invisible/invisible.component';
@@ -61,7 +61,7 @@ import { SpyComponent } from './components/spy/spy.component';
 import { AsyncComponent } from './components/async/async.component';
 import { BindingsComponent } from './components/bindings/bindings.component'
 
- 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -123,7 +123,7 @@ import { BindingsComponent } from './components/bindings/bindings.component'
     FlexLayoutModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass:     AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

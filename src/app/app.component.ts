@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 
-import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
 
 @Component({
@@ -26,7 +26,7 @@ export class AppComponent {
     // this.title = 'Hello Angular 10 setTittle';
     const timestamp = new Date().getMilliseconds();
     this.title = `Hello Angular 10 (${timestamp})`;
-   
+
   }
 
   private changeTitle(callback) {

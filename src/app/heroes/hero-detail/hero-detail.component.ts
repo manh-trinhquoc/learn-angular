@@ -1,11 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap, map } from 'rxjs/operators';
 import { Hero } from '../hero.model';
-import { HeroDetailService } from './hero-detail.service';
-import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-import { ParamMap } from '@angular/router';
 import { HeroService } from '../hero.service';
-import { map } from 'rxjs/operators';
+import { HeroDetailService } from './hero-detail.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -17,9 +15,9 @@ export class HeroDetailComponent implements OnInit {
 
   @Input() id: number;
 
-  constructor(private heroDetaiService: HeroDetailService, 
-    private route: ActivatedRoute, 
-    private heroService: HeroService) { 
+  constructor(private heroDetaiService: HeroDetailService,
+    private route: ActivatedRoute,
+    private heroService: HeroService) {
 
   }
 
@@ -27,7 +25,7 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
     this.hero = this.heroDetaiService.getHero(this.id);
     this.getHeroObs();
-    
+
   }
 
   private getHeroObs() {
